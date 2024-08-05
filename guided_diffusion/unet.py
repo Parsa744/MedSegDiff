@@ -6,17 +6,17 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from collections import OrderedDict
-from .fp16_util import convert_module_to_f16, convert_module_to_f32
+from fp16_util import convert_module_to_f16, convert_module_to_f32
 from copy import deepcopy
-from .utils import softmax_helper,sigmoid_helper
-from .utils import InitWeights_He
+from utils import softmax_helper,sigmoid_helper
+from utils import InitWeights_He
 from batchgenerators.augmentations.utils import pad_nd_image
-from .utils import no_op
-from .utils import to_cuda, maybe_to_torch
+from utils import no_op
+from utils import to_cuda, maybe_to_torch
 from scipy.ndimage.filters import gaussian_filter
 from typing import Union, Tuple, List
 from torch.cuda.amp import autocast
-from .nn import (
+from nn import (
     checkpoint,
     conv_nd,
     linear,
